@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">GoalApp</string>
+    <string name="hometxt">Home</string>
+    <string name="standing">Standing</string>
+    <string name="teams">Teams</string>
+    <string name="fav">Favourite</string>
+    <string name="please_wait">Please wait</string>
+    <string name="teams_txt">Teams</string>
+    <string name="no_available_match">No available match</string>
+    <string name="no_favourite">No favourite</string>
+</resources>

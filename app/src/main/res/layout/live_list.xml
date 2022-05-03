@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content">
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="255dp"
+        android:layout_height="wrap_content"
+        app:cardCornerRadius="24dp"
+        android:layout_marginEnd="16dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:background="@drawable/live_bg"
+            android:paddingStart="24dp"
+            android:paddingTop="16dp"
+            android:paddingEnd="24dp"
+            android:paddingBottom="16dp">
+
+            <TextView
+                android:id="@+id/competitn_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/inter_medium"
+                android:gravity="center_horizontal"
+                android:text="Primier League"
+                android:textAlignment="center"
+                android:textColor="@color/colorWhite"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/macth_day"
+                android:layout_width="39dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:fontFamily="@font/inter_regular"
+                android:text="Day 5"
+                android:textAlignment="center"
+                android:textColor="@color/colorWhite"
+                app:layout_constraintEnd_toEndOf="@+id/competitn_name"
+                app:layout_constraintStart_toStartOf="@+id/competitn_name"
+                app:layout_constraintTop_toBottomOf="@+id/competitn_name" />
+
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:id="@+id/home_logo"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_marginStart="24dp"
+                android:layout_marginTop="16dp"
+                app:layout_constraintEnd_toStartOf="@+id/score"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/macth_day"
+                tools:srcCompat="@tools:sample/avatars" />
+
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:id="@+id/away_logo"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_marginTop="4dp"
+                android:layout_marginEnd="24dp"
+                app:layout_constraintBottom_toBottomOf="@+id/home_logo"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toEndOf="@+id/score"
+                app:layout_constraintTop_toTopOf="@+id/home_logo"
+                tools:srcCompat="@tools:sample/avatars" />
+
+            <TextView
+                android:id="@+id/score"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:layout_marginEnd="8dp"
+                android:fontFamily="@font/intter_bold"
+                android:text="0 : 3"
+                android:textColor="@color/colorWhite"
+                android:textSize="30dp"
+                app:layout_constraintBottom_toBottomOf="@+id/home_logo"
+                app:layout_constraintEnd_toStartOf="@+id/away_logo"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toEndOf="@+id/home_logo"
+                app:layout_constraintTop_toTopOf="@+id/home_logo"
+                app:layout_constraintVertical_bias="0.421" />
+
+            <TextView
+                android:id="@+id/home_team_txt"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:fontFamily="@font/inter_semibold"
+                android:text="TextView"
+                android:textColor="@color/colorWhite"
+                app:layout_constraintEnd_toEndOf="@+id/home_logo"
+                app:layout_constraintStart_toStartOf="@+id/home_logo"
+                app:layout_constraintTop_toBottomOf="@+id/home_logo" />
+
+            <TextView
+                android:id="@+id/away_team_txt"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:fontFamily="@font/inter_semibold"
+                android:text="TextView"
+                android:textColor="@color/colorWhite"
+                app:layout_constraintEnd_toEndOf="@+id/away_logo"
+                app:layout_constraintStart_toStartOf="@+id/away_logo"
+                app:layout_constraintTop_toBottomOf="@+id/away_logo" />
+
+            <TextView
+                android:id="@+id/textView5"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:text="Home"
+                android:textColor="@color/colorWhite"
+                app:layout_constraintEnd_toEndOf="@+id/home_team_txt"
+                app:layout_constraintStart_toStartOf="@+id/home_team_txt"
+                app:layout_constraintTop_toBottomOf="@+id/home_team_txt" />
+
+            <TextView
+                android:id="@+id/textView6"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:text="Away"
+                android:textColor="@color/colorWhite"
+                app:layout_constraintEnd_toEndOf="@+id/away_team_txt"
+                app:layout_constraintStart_toStartOf="@+id/away_team_txt"
+                app:layout_constraintTop_toBottomOf="@+id/away_team_txt" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+    </androidx.cardview.widget.CardView>
+</androidx.constraintlayout.widget.ConstraintLayout>

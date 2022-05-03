@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="DesignSurface">
+    <option name="filePathToZoomLevelMap">
+      <map>
+        <entry key="app/src/main/res/drawable/chip_selector.xml" value="0.1" />
+        <entry key="app/src/main/res/drawable/fav_btn_selector.xml" value="0.18333333333333332" />
+        <entry key="app/src/main/res/drawable/ic_favourite_select.xml" value="0.1" />
+        <entry key="app/src/main/res/drawable/ic_favourite_unselect.xml" value="0.1" />
+        <entry key="app/src/main/res/drawable/live_bg.xml" value="0.21510416666666668" />
+        <entry key="app/src/main/res/drawable/rounded_bg.xml" value="0.16927083333333334" />
+        <entry key="app/src/main/res/drawable/select_competitn.xml" value="0.21510416666666668" />
+        <entry key="app/src/main/res/drawable/soccer.xml" value="0.21510416666666668" />
+        <entry key="app/src/main/res/drawable/unselect_competitn.xml" value="0.21510416666666668" />
+        <entry key="app/src/main/res/layout/activity_favourite.xml" value="0.25" />
+        <entry key="app/src/main/res/layout/activity_home.xml" value="0.2685589519650655" />
+        <entry key="app/src/main/res/layout/competition_list.xml" value="0.81" />
+        <entry key="app/src/main/res/layout/dialog_teams_list.xml" value="0.33" />
+        <entry key="app/src/main/res/layout/fav_team_list.xml" value="0.5488029465930019" />
+        <entry key="app/src/main/res/layout/item_competition_list.xml" value="0.18206521739130435" />
+        <entry key="app/src/main/res/layout/live_list.xml" value="0.33" />
+        <entry key="app/src/main/res/layout/match_list.xml" value="0.39280774550484093" />
+        <entry key="app/src/main/res/layout/standing_list.xml" value="0.4506517690875233" />
+        <entry key="app/src/main/res/layout/teams_list.xml" value="0.5" />
+        <entry key="app/src/main/res/menu/bottom_menu.xml" value="0.1" />
+      </map>
+    </option>
+  </component>
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="11" project-jdk-type="JavaSDK">
+    <output url="file://$PROJECT_DIR$/build/classes" />
+  </component>
+  <component name="ProjectType">
+    <option name="id" value="Android" />
+  </component>
+</project>

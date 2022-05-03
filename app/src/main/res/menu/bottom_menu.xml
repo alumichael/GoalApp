@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/menu_home"
+        android:icon="@drawable/ic_home"
+        android:fontFamily="@font/inter_medium"
+        android:title="@string/hometxt" />
+
+    <item
+        android:id="@+id/menu_teams"
+        android:icon="@drawable/account_multiple"
+        android:fontFamily="@font/inter_medium"
+        android:title="@string/teams" />
+
+    <item
+        android:id="@+id/menu_fav"
+        android:icon="@drawable/ic_favourite_unselect"
+        android:fontFamily="@font/inter_medium"
+        android:title="@string/fav" />
+</menu>

@@ -1,0 +1,12 @@
+<com.google.android.material.chip.Chip
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/competitn_name_chip"
+    android:layout_width="wrap_content"
+    android:layout_height="match_parent"
+    android:fontFamily="@font/inter_medium"
+    android:padding="8dp"
+    android:textSize="14sp"
+    android:text="Premier League"
+    app:rippleColor="@color/PrimaryDark"
+    />
