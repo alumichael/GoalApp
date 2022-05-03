@@ -23,6 +23,12 @@ android {
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
         multiDexEnabled true
         vectorDrawables.useSupportLibrary = true
+
+        kapt {
+            arguments {
+                arg("room.schemaLocation", "$projectDir/schemas")
+            }
+        }
     }
 
     buildTypes {
@@ -63,11 +69,10 @@ dependencies {
 
     //room, injection,datastore pref,fragment
     implementation "androidx.room:room-runtime:$roomVersion"
-    implementation 'junit:junit:4.12'
-    testImplementation 'junit:junit:4.12'
-    testImplementation 'junit:junit:4.12'
-    annotationProcessor "androidx.room:room-compiler:$roomVersion"
     kapt "androidx.room:room-compiler:$roomVersion"
+    // Kotlin Extensions and Coroutines support for Room
+    implementation "androidx.room:room-ktx:$roomVersion"
+
     implementation 'androidx.lifecycle:lifecycle-livedata-ktx:2.4.1'
     implementation "com.google.dagger:hilt-android:2.39.1"
     implementation 'androidx.hilt:hilt-lifecycle-viewmodel:1.0.0-alpha03'

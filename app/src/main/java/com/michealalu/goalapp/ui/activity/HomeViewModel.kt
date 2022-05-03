@@ -22,8 +22,8 @@ import javax.inject.Inject
 
 @HiltViewModel
 class HomeViewModel @Inject constructor(
-        private val userRepository: UserRepository,
-        private  val api: ApiInterface
+         val userRepository: UserRepository,
+         val api: ApiInterface
   ) : ViewModel() {
 
     //get all competitions live data

@@ -10,17 +10,10 @@ import kotlinx.coroutines.launch
 import javax.inject.Inject
 import javax.inject.Provider
 
-@Database(entities = [FavTeam::class],  version = 1)
-abstract class TeamDatabase: RoomDatabase() {
+@Database(
+    entities = [FavTeam::class],
+    version = 1
+)
+abstract class TeamDatabase : RoomDatabase() {
     abstract fun teamDao(): TeamDao
-    class Callback @Inject constructor(private val teamDatabase: Provider<TeamDatabase>,
-                                       @ApplicationContext private val applicationScope: CoroutineScope)
-        : RoomDatabase.Callback(){
-        override fun onCreate(db: SupportSQLiteDatabase) {
-            super.onCreate(db)
-            val dao = teamDatabase.get().teamDao()
-            applicationScope.launch {
-            }
-        }
-    }
 }

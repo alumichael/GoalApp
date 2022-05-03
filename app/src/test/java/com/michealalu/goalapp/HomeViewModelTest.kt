@@ -1,27 +1,23 @@
 package com.michealalu.goalapp
 
 import androidx.arch.core.executor.testing.InstantTaskExecutorRule
+import androidx.lifecycle.Observer
 import com.michealalu.goalapp.data.network.ApiInterface
 import com.michealalu.goalapp.data.network.Resource
 import com.michealalu.goalapp.model.competitions.GetCompetitions
 import com.michealalu.goalapp.ui.activity.HomeViewModel
 import org.junit.Before
-import org.junit.ClassRule
 import org.junit.Rule
 import org.junit.Test
 import org.junit.runner.RunWith
 import org.mockito.Mock
-import org.mockito.Mockito
-import org.mockito.junit.MockitoJUnitRunner
-import java.util.*
-import androidx.lifecycle.Observer
 import org.mockito.Mockito.doReturn
 import org.mockito.Mockito.verify
-import retrofit2.Response
+import org.mockito.junit.MockitoJUnitRunner
 
 
 /**
- * JUnit Test for a testing api request
+ * JUnit Test for api request
  */
 @RunWith(MockitoJUnitRunner::class)
 class HomeViewModelTest {
@@ -32,7 +28,6 @@ class HomeViewModelTest {
     @Rule
     @JvmField
     var rule = InstantTaskExecutorRule()
-
 
     @Mock
     lateinit var apiInterface: ApiInterface
@@ -53,7 +48,6 @@ class HomeViewModelTest {
     //Case 1: check getAllCompetition endpoint call success and not null
     @Test
     suspend fun shouldReturnRequestSuccess_CheckDataNotNull() {
-
         doReturn(emptyList<GetCompetitions>())
             .`when`(apiInterface)
             .onGetAllCompetitions()

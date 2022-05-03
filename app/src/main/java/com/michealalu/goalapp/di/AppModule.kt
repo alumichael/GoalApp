@@ -2,7 +2,9 @@ package com.michealalu.goalapp.di
 
 
 import android.content.Context
+import androidx.room.Room
 import com.fbn.fbnquest.data.network.RetrofitClient
+import com.michealalu.goalapp.data.local.favourite_db.TeamDatabase
 import com.michealalu.goalapp.data.network.ApiInterface
 
 import dagger.Module
@@ -30,6 +32,20 @@ object AppModule {
     ): ApiInterface {
         return retrofitClient.buildApi(ApiInterface::class.java, context)
     }
+
+    @Singleton // Tell Dagger-Hilt to create a singleton accessible everywhere in ApplicationCompenent (i.e. everywhere in the application)
+    @Provides
+    fun provideTeamDatabase(
+        @ApplicationContext app: Context
+    ) = Room.databaseBuilder(
+        app,
+        TeamDatabase::class.java,
+        "fav_db"
+    ).build()
+
+    @Singleton
+    @Provides
+    fun provideYourDao(db: TeamDatabase) = db.teamDao()
 
 
 }
