@@ -9,4 +9,5 @@ sealed class Resource<out T> {
         val errorBody: String?
     ) : Resource<Nothing>()
     object Loading : Resource<Nothing>()
+
 }

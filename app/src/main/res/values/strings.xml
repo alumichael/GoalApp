@@ -8,4 +8,13 @@
     <string name="teams_txt">Teams</string>
     <string name="no_available_match">No available match</string>
     <string name="no_favourite">No favourite</string>
+    <string name="no_live_match_at_the_moment">No live match at the moment</string>
+    <string name="live_match_txt">Live Matches</string>
+    <string name="no_live_match_txt">No live match at the moment</string>
+    <string name="vs_txt">vs</string>
+    <string name="goals_txt">Goals</string>
+    <string name="line_up_txt">Line up</string>
+    <string name="substitutions_txt">Substitutions</string>
+    <string name="referee_txt">Referee</string>
+    <string name="textview_txt">TextView</string>
 </resources>

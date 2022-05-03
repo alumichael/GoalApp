@@ -16,6 +16,8 @@ data class Matche(
     var goals: List<Goal>? = null,
     @SerialName("group")
     var group: String? = null,
+    @SerialName("competition")
+    var competition: Competition? = null,
     @SerialName("homeTeam")
     var homeTeam: HomeTeam? = null,
     @SerialName("id")

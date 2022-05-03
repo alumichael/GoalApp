@@ -3,20 +3,24 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="app/src/main/res/drawable/card_decor_vector.xml" value="0.1795138888888889" />
         <entry key="app/src/main/res/drawable/chip_selector.xml" value="0.1" />
         <entry key="app/src/main/res/drawable/fav_btn_selector.xml" value="0.18333333333333332" />
         <entry key="app/src/main/res/drawable/ic_favourite_select.xml" value="0.1" />
         <entry key="app/src/main/res/drawable/ic_favourite_unselect.xml" value="0.1" />
         <entry key="app/src/main/res/drawable/live_bg.xml" value="0.21510416666666668" />
+        <entry key="app/src/main/res/drawable/match_bg.xml" value="0.26927083333333335" />
         <entry key="app/src/main/res/drawable/rounded_bg.xml" value="0.16927083333333334" />
         <entry key="app/src/main/res/drawable/select_competitn.xml" value="0.21510416666666668" />
         <entry key="app/src/main/res/drawable/soccer.xml" value="0.21510416666666668" />
         <entry key="app/src/main/res/drawable/unselect_competitn.xml" value="0.21510416666666668" />
         <entry key="app/src/main/res/layout/activity_favourite.xml" value="0.25" />
-        <entry key="app/src/main/res/layout/activity_home.xml" value="0.2685589519650655" />
+        <entry key="app/src/main/res/layout/activity_home.xml" value="0.5" />
+        <entry key="app/src/main/res/layout/activity_match_detail.xml" value="0.22" />
         <entry key="app/src/main/res/layout/competition_list.xml" value="0.81" />
         <entry key="app/src/main/res/layout/dialog_teams_list.xml" value="0.33" />
-        <entry key="app/src/main/res/layout/fav_team_list.xml" value="0.5488029465930019" />
+        <entry key="app/src/main/res/layout/fav_team_list.xml" value="0.2" />
+        <entry key="app/src/main/res/layout/goal_list.xml" value="0.33236994219653176" />
         <entry key="app/src/main/res/layout/item_competition_list.xml" value="0.18206521739130435" />
         <entry key="app/src/main/res/layout/live_list.xml" value="0.33" />
         <entry key="app/src/main/res/layout/match_list.xml" value="0.39280774550484093" />

@@ -7,6 +7,9 @@ open class Constant {
         val BASE_URL = "https://api.football-data.org/"
         val LOGOBASE_URL = "https://crests.football-data.org/"
 
+        val SUCCESS = "Successful"
+        val FAILURE = "Failed"
+
     }
 
 

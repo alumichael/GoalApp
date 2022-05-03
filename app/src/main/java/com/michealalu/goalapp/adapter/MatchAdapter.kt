@@ -51,7 +51,7 @@ class MatchAdapter(val context: Context, val competitionName: String)
 
 
             if(cardoption.status?.equals("SCHEDULED") == true){
-                holder.binding.score.text = "vs"
+                holder.binding.score.text = context.getString(com.michealalu.goalapp.R.string.vs_txt)
                 holder.binding.status.text = cardoption.status?.lowercase()
 
 

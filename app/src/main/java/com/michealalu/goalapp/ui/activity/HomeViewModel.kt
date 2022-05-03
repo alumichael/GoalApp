@@ -9,6 +9,7 @@ import com.michealalu.goalapp.UserRepository
 import com.michealalu.goalapp.data.local.ResourceDb
 import com.michealalu.goalapp.data.network.ApiInterface
 import com.michealalu.goalapp.model.FavTeam
+import com.michealalu.goalapp.model.competitions.Competition
 import com.michealalu.goalapp.model.competitions.GetCompetitions
 import com.michealalu.goalapp.model.match.GetAMatch
 import com.michealalu.goalapp.model.match.GetMatchesByCompetitn
@@ -37,10 +38,6 @@ class HomeViewModel @Inject constructor(
     //get all match-by-competition live data
     private val _matchResponse: MutableLiveData<Resource<GetMatchesByCompetitn>> = MutableLiveData()
     val matchResponse: LiveData<Resource<GetMatchesByCompetitn>> get() = _matchResponse
-
-    //get a match live data
-    private val _oneMatchResponse: MutableLiveData<Resource<GetAMatch>> = MutableLiveData()
-    val oneMatchResponse: LiveData<Resource<GetAMatch>> get() = _oneMatchResponse
 
     //get all teams-by-competition live data
     private val _teamsResponse: MutableLiveData<Resource<GetTeamByCompetitn>> = MutableLiveData()
@@ -77,10 +74,6 @@ class HomeViewModel @Inject constructor(
         _matchResponse.value = userRepository.onGetMatchByCompetitn(id)
     }
 
-    fun onGetAMatch(id:Int) = viewModelScope.launch {
-        _oneMatchResponse.value = Resource.Loading
-        _oneMatchResponse.value = userRepository.onGetAMatch(id)
-    }
 
     fun onGetTeamsByCompetition(id:Int) = viewModelScope.launch {
         _teamsResponse.value = Resource.Loading
@@ -96,6 +89,7 @@ class HomeViewModel @Inject constructor(
         _standingResponse.value = Resource.Loading
         _standingResponse.value = userRepository.onGetStandByCompetition(id)
     }
+
 
     /**
      * Local logic

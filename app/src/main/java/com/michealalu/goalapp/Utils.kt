@@ -4,6 +4,9 @@ import android.app.Activity
 import android.app.Dialog
 import android.content.Context
 import android.content.Intent
+import android.net.ConnectivityManager
+import android.net.NetworkCapabilities
+import android.os.Build
 import android.view.View
 import android.view.Window
 import android.widget.Toast
@@ -23,6 +26,13 @@ fun Activity.progressBar(dialogTransparent :Dialog,progressView: View ){
 
 fun <A : Activity> Activity.startNewActivity(activity: Class<A>) {
     startActivity(Intent(this, activity))
+}
+
+fun <A : Activity> Activity.startNewActivityByID(activity: Class<A>, content: String) {
+    Intent(this, activity).also {
+        it.putExtra("MATCH_CONTENT", content)
+        startActivity(it)
+    }
 }
 
 fun Activity.handleError(
@@ -48,6 +58,24 @@ fun Activity.handleError(
     } catch (e: Exception) {
         e.printStackTrace()
         toast("Sorry, something went wrong", context)
+    }
+}
+
+fun  Activity.isOnline(context: Context): Boolean {
+    val cm = context.getSystemService(Context.CONNECTIVITY_SERVICE) as ConnectivityManager
+
+    if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
+        val n = cm.activeNetwork
+        if (n != null) {
+            val nc = cm.getNetworkCapabilities(n)
+            //It will check for both wifi and cellular network
+            return nc!!.hasTransport(NetworkCapabilities.TRANSPORT_CELLULAR) || nc.hasTransport(
+                NetworkCapabilities.TRANSPORT_WIFI)
+        }
+        return false
+    } else {
+        val netInfo = cm.activeNetworkInfo
+        return netInfo != null && netInfo.isConnectedOrConnecting
     }
 }
 

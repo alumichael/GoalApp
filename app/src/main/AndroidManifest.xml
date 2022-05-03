@@ -16,6 +16,10 @@
             android:name=".ui.activity.FavouriteActivity"
             android:exported="false" />
         <activity
+            android:name=".ui.activity.MatchDetailActivity"
+            android:exported="false" />
+
+        <activity
             android:name=".ui.activity.HomeActivity"
             android:exported="true">
             <intent-filter>

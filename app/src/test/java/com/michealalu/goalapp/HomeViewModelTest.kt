@@ -33,40 +33,36 @@ class HomeViewModelTest {
     @get:Rule
     val testInstantTaskExecutorRule: TestRule = InstantTaskExecutorRule()
 
-    /*@ExperimentalCoroutinesApi
+    @ExperimentalCoroutinesApi
     @get:Rule
-    val testCoroutineRule = TestCoroutineRule()*/
+    val testCoroutineRule = TestCoroutineRule()
 
     @Mock
     lateinit var competitionObserver: Observer<Resource<GetCompetitions>>
-
 
     @Mock
     lateinit var userRepository: UserRepository
 
     @Mock
-    @Inject
-    lateinit var teamDao: TeamDao
-
-    @Mock
     lateinit var  apiInterface: ApiInterface
 
-    lateinit var homeViewModel: HomeViewModel
 
-
-    @Before
-    fun setUp() {
-        // initialize the ViewModel with a mocked api interface
-        //userRepository= UserRepository(api=apiInterface, teamDao = teamDao)
-        homeViewModel = HomeViewModel(api=apiInterface, userRepository = userRepository)
-    }
-
-    //Case 1: check getAllCompetition endpoint call success and not null
     @ExperimentalCoroutinesApi
     @Test
-     fun shouldReturnRequestSuccess_CheckDataNotNull() {
+    fun shouldVerifySuccess_CheckDataNotNull() {
+        testCoroutineRule.runBlockingTest {
+            doReturn(emptyList<GetCompetitions>())
+                .`when`(apiInterface)
+                .onGetACompetition(2021)
 
+            val homeViewModel = HomeViewModel(api=apiInterface, userRepository = userRepository)
+            homeViewModel.oneCompetitionResponse.observeForever(competitionObserver)
+            verify(apiInterface).onGetACompetition(2021)
+
+            homeViewModel.oneCompetitionResponse.removeObserver(competitionObserver)
+        }
     }
+
 
 
 }

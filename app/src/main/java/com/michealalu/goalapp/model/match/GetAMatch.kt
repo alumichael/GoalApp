@@ -9,5 +9,5 @@ data class GetAMatch(
     @SerialName("head2head")
     var head2head: Head2head? = null,
     @SerialName("match")
-    var match: Matche? = null
+    var match: Match? = null
 )
