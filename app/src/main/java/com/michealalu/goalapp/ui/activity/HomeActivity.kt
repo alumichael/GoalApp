@@ -26,6 +26,7 @@ import com.michealalu.goalapp.model.FavTeam
 import com.michealalu.goalapp.model.match.Matche
 import com.michealalu.goalapp.model.team.Team
 import com.michealalu.goalapp.progressBar
+import com.michealalu.goalapp.startNewActivity
 
 
 @AndroidEntryPoint
@@ -78,7 +79,7 @@ class HomeActivity : AppCompatActivity(), SwipeRefreshLayout.OnRefreshListener,
                         return@setOnItemSelectedListener true
                     }
                     R.id.menu_fav -> {
-
+                        startNewActivity(FavouriteActivity::class.java)
                         return@setOnItemSelectedListener true
                     }
 

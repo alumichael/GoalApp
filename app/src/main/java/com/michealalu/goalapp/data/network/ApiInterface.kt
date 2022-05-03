@@ -18,7 +18,7 @@ interface ApiInterface {
     suspend fun onGetAllCompetitions(): GetCompetitions
 
     @GET("v2/competitions/{id}")
-    suspend fun onGetACompetition(
+    fun onGetACompetition(
         @Path("id") id:Int
     ): GetCompetitions
 

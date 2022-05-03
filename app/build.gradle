@@ -29,6 +29,13 @@ android {
                 arg("room.schemaLocation", "$projectDir/schemas")
             }
         }
+
+    }
+
+    testOptions {
+        unitTests.all {
+            useJUnitPlatform()
+        }
     }
 
     buildTypes {
@@ -47,6 +54,8 @@ android {
     kotlinOptions {
         jvmTarget = '11'
     }
+
+
 }
 
 dependencies {
@@ -69,6 +78,7 @@ dependencies {
 
     //room, injection,datastore pref,fragment
     implementation "androidx.room:room-runtime:$roomVersion"
+    implementation 'junit:junit:4.12'
     kapt "androidx.room:room-compiler:$roomVersion"
     // Kotlin Extensions and Coroutines support for Room
     implementation "androidx.room:room-ktx:$roomVersion"
@@ -102,6 +112,18 @@ dependencies {
     testImplementation 'junit:junit:4.12'
     testImplementation "org.mockito:mockito-core:2.+"
     testImplementation 'androidx.arch.core:core-testing:2.0.0'
+    testImplementation 'org.jetbrains.kotlinx:kotlinx-coroutines-test:1.3.4'
     androidTestImplementation 'androidx.test:runner:1.1.1'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.1.1'
+
+    //rule &truth to reduce boilerplate
+    androidTestImplementation 'androidx.test:rules:1.1.1'
+    androidTestImplementation 'androidx.test.ext:junit:1.1.0'
+
+
+
+    testImplementation 'org.junit.jupiter:junit-jupiter-api:5.7.1'
+    testImplementation 'org.junit.jupiter:junit-jupiter-engine:5.7.1'
+
+
 }

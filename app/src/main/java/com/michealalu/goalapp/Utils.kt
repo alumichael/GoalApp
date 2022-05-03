@@ -3,6 +3,7 @@ package com.michealalu.goalapp
 import android.app.Activity
 import android.app.Dialog
 import android.content.Context
+import android.content.Intent
 import android.view.View
 import android.view.Window
 import android.widget.Toast
@@ -18,6 +19,10 @@ fun Activity.progressBar(dialogTransparent :Dialog,progressView: View ){
     dialogTransparent.window?.setBackgroundDrawableResource(
         R.color.colorBlackTransparent)
     dialogTransparent.setContentView(progressView)
+}
+
+fun <A : Activity> Activity.startNewActivity(activity: Class<A>) {
+    startActivity(Intent(this, activity))
 }
 
 fun Activity.handleError(

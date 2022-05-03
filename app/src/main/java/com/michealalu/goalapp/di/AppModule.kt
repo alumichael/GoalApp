@@ -45,7 +45,11 @@ object AppModule {
 
     @Singleton
     @Provides
-    fun provideYourDao(db: TeamDatabase) = db.teamDao()
+    fun provideTeamDao(db: TeamDatabase) = db.teamDao()
+
+    @Singleton
+    @Provides
+    fun provideApiInterface(api: ApiInterface) = ApiInterface::class.java
 
 
 }
