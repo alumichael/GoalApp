@@ -44,10 +44,10 @@
 
         <TextView
             android:id="@+id/short_name_txt"
-            android:layout_width="wrap_content"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:text="TextView"
             android:fontFamily="@font/inter_regular"
+            android:text="TextViewgdgdgdgdgdgdggd"
             android:textSize="13sp"
             app:layout_constraintStart_toStartOf="@+id/team_name"
             app:layout_constraintTop_toBottomOf="@+id/team_name" />
@@ -56,19 +56,19 @@
             android:id="@+id/textView2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="8dp"
-            android:text="Founded:"
             android:fontFamily="@font/inter_regular"
+            android:text="Founded:"
             android:textSize="13sp"
-            app:layout_constraintStart_toEndOf="@+id/short_name_txt"
-            app:layout_constraintTop_toTopOf="@+id/short_name_txt" />
+            app:layout_constraintStart_toStartOf="@+id/short_name_txt"
+            app:layout_constraintTop_toBottomOf="@+id/short_name_txt" />
 
         <TextView
             android:id="@+id/founded_txt"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="1997"
+            android:layout_marginStart="4dp"
             android:fontFamily="@font/inter_semibold"
+            android:text="1997"
             android:textSize="13sp"
             app:layout_constraintStart_toEndOf="@+id/textView2"
             app:layout_constraintTop_toTopOf="@+id/textView2" />

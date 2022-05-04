@@ -2,29 +2,19 @@ package com.michealalu.goalapp.adapter
 
 import android.content.Context
 import android.graphics.Color
+import android.net.Uri
 import android.util.Log
 import android.view.LayoutInflater
 import android.view.ViewGroup
-import androidx.core.graphics.toColorInt
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
-import com.bumptech.glide.Glide
-import com.bumptech.glide.load.engine.DiskCacheStrategy
-import com.bumptech.glide.request.RequestOptions
+import com.github.twocoffeesoneteam.glidetovectoryou.GlideToVectorYou
 import com.michealalu.goalapp.Constant.Companion.BASE_URL
 import com.michealalu.goalapp.Constant.Companion.LOGOBASE_URL
-import com.michealalu.goalapp.databinding.LiveListBinding
 import com.michealalu.goalapp.databinding.MatchListBinding
-import com.michealalu.goalapp.model.match.Competition
 import com.michealalu.goalapp.model.match.Matche
-import android.R
-
-import android.graphics.drawable.PictureDrawable
-import android.net.Uri
-import com.bumptech.glide.load.model.StreamEncoder
-import com.github.twocoffeesoneteam.glidetovectoryou.GlideToVectorYou
-import java.io.InputStream
+import com.squareup.picasso.Picasso
 
 
 class MatchAdapter(val context: Context, val competitionName: String)
@@ -125,13 +115,26 @@ class MatchAdapter(val context: Context, val competitionName: String)
                         .with(context)
                         .load(Uri.parse(url_away), awaylogo)
                 }else{
-                    Glide.with(context).load(url_home).apply(
+
+                    Picasso.get()
+                        .load(url_home)
+                        .resize(40,40)
+                        .centerCrop()
+                        .into(homelogo)
+
+                    Picasso.get()
+                        .load(url_away)
+                        .resize(40,40)
+                        .centerCrop()
+                        .into(awaylogo)
+
+                   /* Glide.with(context).load(url_home).apply(
                         RequestOptions().diskCacheStrategy(DiskCacheStrategy.AUTOMATIC).fitCenter()
                     ).into(homelogo)
 
                     Glide.with(context).load(url_away).apply(
                         RequestOptions().diskCacheStrategy(DiskCacheStrategy.AUTOMATIC).fitCenter()
-                    ).into(awaylogo)
+                    ).into(awaylogo)*/
                 }
             }
 

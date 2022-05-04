@@ -15,8 +15,9 @@
         <entry key="app/src/main/res/drawable/soccer.xml" value="0.21510416666666668" />
         <entry key="app/src/main/res/drawable/unselect_competitn.xml" value="0.21510416666666668" />
         <entry key="app/src/main/res/layout/activity_favourite.xml" value="0.25" />
-        <entry key="app/src/main/res/layout/activity_home.xml" value="0.5" />
+        <entry key="app/src/main/res/layout/activity_home.xml" value="0.33" />
         <entry key="app/src/main/res/layout/activity_match_detail.xml" value="0.22" />
+        <entry key="app/src/main/res/layout/activity_splash_screen.xml" value="0.13" />
         <entry key="app/src/main/res/layout/competition_list.xml" value="0.81" />
         <entry key="app/src/main/res/layout/dialog_teams_list.xml" value="0.33" />
         <entry key="app/src/main/res/layout/fav_team_list.xml" value="0.2" />
@@ -24,6 +25,7 @@
         <entry key="app/src/main/res/layout/item_competition_list.xml" value="0.18206521739130435" />
         <entry key="app/src/main/res/layout/live_list.xml" value="0.33" />
         <entry key="app/src/main/res/layout/match_list.xml" value="0.39280774550484093" />
+        <entry key="app/src/main/res/layout/referee_list.xml" value="0.45567375886524825" />
         <entry key="app/src/main/res/layout/standing_list.xml" value="0.4506517690875233" />
         <entry key="app/src/main/res/layout/teams_list.xml" value="0.5" />
         <entry key="app/src/main/res/menu/bottom_menu.xml" value="0.1" />

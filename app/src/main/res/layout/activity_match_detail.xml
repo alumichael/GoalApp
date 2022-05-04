@@ -74,329 +74,363 @@
         android:orientation="vertical"
         app:layout_constraintGuide_end="24dp" />
 
-    <FrameLayout
-        android:id="@+id/frameLayout"
+    <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/toolbar_layout">
 
-        <FrameLayout
-            android:layout_width="match_parent"
-            android:layout_height="150dp"
-            android:background="@drawable/match_bg" />
-
-        <androidx.cardview.widget.CardView
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginStart="24dp"
-            android:layout_marginTop="24dp"
-            android:layout_marginBottom="16dp"
-            android:layout_marginEnd="24dp"
-            app:cardCornerRadius="24dp"
-            app:cardElevation="10dp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent">
+            android:orientation="vertical">
 
             <androidx.constraintlayout.widget.ConstraintLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:background="@color/colorWhite">
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+
+                <FrameLayout
+                    android:id="@+id/frameLayout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent">
+
+                    <FrameLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="150dp"
+                        android:background="@drawable/match_bg" />
+
+                    <androidx.cardview.widget.CardView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="24dp"
+                        android:layout_marginTop="24dp"
+                        android:layout_marginEnd="24dp"
+                        android:layout_marginBottom="16dp"
+                        app:cardCornerRadius="24dp"
+                        app:cardElevation="10dp"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent">
+
+                        <androidx.constraintlayout.widget.ConstraintLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:background="@color/colorWhite">
+
+                            <TextView
+                                android:id="@+id/macth_day"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="16dp"
+                                android:fontFamily="@font/inter_medium"
+                                android:gravity="center_horizontal"
+                                android:textAlignment="center"
+                                android:textColor="@color/colorBlack"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toTopOf="parent" />
+
+
+                            <de.hdodenhof.circleimageview.CircleImageView
+                                android:id="@+id/home_logo"
+                                android:layout_width="60dp"
+                                android:layout_height="60dp"
+                                android:layout_marginTop="20dp"
+                                app:layout_constraintEnd_toEndOf="@+id/home_team_txt"
+                                app:layout_constraintStart_toStartOf="@+id/home_team_txt"
+                                app:layout_constraintTop_toBottomOf="@+id/macth_day"
+                                tools:srcCompat="@tools:sample/avatars" />
+
+                            <de.hdodenhof.circleimageview.CircleImageView
+                                android:id="@+id/away_logo"
+                                android:layout_width="60dp"
+                                android:layout_height="60dp"
+                                android:layout_marginTop="4dp"
+                                app:layout_constraintBottom_toBottomOf="@+id/home_logo"
+                                app:layout_constraintEnd_toEndOf="@+id/away_team_txt"
+                                app:layout_constraintStart_toStartOf="@+id/away_team_txt"
+                                app:layout_constraintTop_toTopOf="@+id/home_logo"
+                                tools:srcCompat="@tools:sample/avatars" />
+
+                            <TextView
+                                android:id="@+id/score"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="16dp"
+                                android:layout_marginEnd="16dp"
+                                android:fontFamily="@font/intter_bold"
+                                android:text="0 : 3"
+                                android:textColor="@color/colorOrangeLight"
+                                android:textSize="32dp"
+                                app:layout_constraintBottom_toBottomOf="@+id/home_logo"
+                                app:layout_constraintEnd_toStartOf="@+id/away_logo"
+                                app:layout_constraintHorizontal_bias="0.5"
+                                app:layout_constraintStart_toEndOf="@+id/home_logo"
+                                app:layout_constraintTop_toTopOf="@+id/home_logo"
+                                app:layout_constraintVertical_bias="0.421" />
+
+                            <TextView
+                                android:id="@+id/home_team_txt"
+                                android:layout_width="106dp"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="16dp"
+                                android:layout_marginTop="8dp"
+                                android:layout_marginEnd="8dp"
+                                android:layout_marginBottom="8dp"
+                                android:fontFamily="@font/inter_medium"
+                                android:text="HomeTeam"
+                                android:textAlignment="center"
+                                android:textColor="@color/PrimaryText"
+                                android:textSize="13sp"
+                                app:layout_constraintBottom_toTopOf="@+id/status5"
+                                app:layout_constraintEnd_toStartOf="@+id/away_team_txt"
+                                app:layout_constraintHorizontal_bias="0.5"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toBottomOf="@+id/home_logo"
+                                app:layout_constraintVertical_bias="1.0" />
+
+                            <TextView
+                                android:id="@+id/away_team_txt"
+                                android:layout_width="106dp"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="8dp"
+                                android:layout_marginTop="8dp"
+                                android:layout_marginEnd="16dp"
+                                android:layout_marginBottom="8dp"
+                                android:fontFamily="@font/inter_medium"
+                                android:text="AwayTeam"
+                                android:textAlignment="center"
+                                android:textColor="@color/PrimaryText"
+                                app:layout_constraintBottom_toTopOf="@+id/status6"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintHorizontal_bias="0.5"
+                                app:layout_constraintStart_toEndOf="@+id/home_team_txt"
+                                app:layout_constraintTop_toBottomOf="@+id/away_logo" />
+
+                            <TextView
+                                android:id="@+id/status5"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginBottom="16dp"
+                                android:text="Home"
+                                android:textColor="@color/colorOrangeLight"
+                                android:textSize="12sp"
+                                app:layout_constraintBottom_toBottomOf="parent"
+                                app:layout_constraintEnd_toEndOf="@+id/home_team_txt"
+                                app:layout_constraintStart_toStartOf="@+id/home_team_txt" />
+
+                            <TextView
+                                android:id="@+id/status6"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginBottom="16dp"
+                                android:text="Away"
+                                android:textColor="@color/colorOrangeLight"
+                                android:textSize="12sp"
+                                app:layout_constraintBottom_toBottomOf="parent"
+                                app:layout_constraintEnd_toEndOf="@+id/away_team_txt"
+                                app:layout_constraintStart_toStartOf="@+id/away_team_txt" />
+
+                            <TextView
+                                android:id="@+id/status"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="status"
+                                android:textSize="12sp"
+                                app:layout_constraintBottom_toBottomOf="@+id/status5"
+                                app:layout_constraintEnd_toStartOf="@+id/status6"
+                                app:layout_constraintStart_toEndOf="@+id/status5"
+                                app:layout_constraintTop_toTopOf="@+id/status5" />
+
+                        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+                    </androidx.cardview.widget.CardView>
+
+
+                </FrameLayout>
 
                 <TextView
-                    android:id="@+id/macth_day"
+                    android:id="@+id/date_txt"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginEnd="24dp"
+                    android:text="TextView"
+                    android:textAlignment="textEnd"
+                    app:layout_constraintBottom_toBottomOf="@+id/textView"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="@+id/textView"
+                    app:layout_constraintTop_toTopOf="@+id/textView" />
+
+                <TextView
+                    android:id="@+id/textView"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:layout_marginStart="24dp"
+                    android:layout_marginTop="8dp"
+                    android:text="Date:"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/frameLayout" />
+
+                <TextView
+                    android:id="@+id/textView11"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="24dp"
+                    android:layout_marginTop="8dp"
+                    android:text="Stage:"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/textView" />
+
+                <TextView
+                    android:id="@+id/stage_txt"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginEnd="24dp"
+                    android:text="stage"
+                    android:textAlignment="textEnd"
+                    app:layout_constraintBottom_toBottomOf="@+id/textView11"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="@+id/textView11"
+                    app:layout_constraintTop_toTopOf="@+id/textView11" />
+
+                <HorizontalScrollView
+                    android:id="@+id/horizontalScrollView2"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="24dp"
                     android:layout_marginTop="16dp"
-                    android:fontFamily="@font/inter_medium"
-                    android:gravity="center_horizontal"
-                    android:textAlignment="center"
-                    android:textColor="@color/colorBlack"
+                    android:layout_marginEnd="24dp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.0"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/stage_txt">
+
+                    <com.google.android.material.chip.ChipGroup
+                        android:id="@+id/chipGroup"
+                        android:layout_width="wrap_content"
+                        android:layout_height="56dp"
+                        app:checkedChip="@+id/chip_refree"
+                        app:chipSpacing="16dp"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/frameLayout"
+                        app:singleLine="true"
+                        app:singleSelection="true">
+
+
+                        <com.google.android.material.chip.Chip
+                            android:id="@+id/chip_refree"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/inter_medium"
+                            android:tag="chip_refree"
+                            android:text="@string/referee_txt"
+                            android:textColor="@color/colorWhite"
+                            android:textSize="14sp"
+                            app:chipBackgroundColor="@color/Primary" />
+
+                        <com.google.android.material.chip.Chip
+                            android:id="@+id/chip_goals"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/inter_medium"
+                            android:tag="chipGoals"
+                            android:text="@string/goals_txt"
+                            android:textColor="@color/Primary"
+                            android:textSize="14sp"
+                             />
+
+
+                        <com.google.android.material.chip.Chip
+                            android:id="@+id/chip_subtitution"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/inter_medium"
+                            android:tag="chip_subtitution"
+                            android:text="@string/substitutions_txt"
+                            android:textColor="@color/Primary" />
+
+
+                        <com.google.android.material.chip.Chip
+                            android:id="@+id/chip_lineup"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/inter_medium"
+                            android:tag="chip_lineup"
+                            android:text="@string/line_up_txt"
+                            android:textColor="@color/Primary" />
+
+
+                        <com.google.android.material.chip.Chip
+                            android:id="@+id/chip_booking"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/inter_medium"
+                            android:tag="chip_booking"
+                            android:text="Booking"
+                            android:textColor="@color/Primary" />
+
+                    </com.google.android.material.chip.ChipGroup>
+                </HorizontalScrollView>
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/goals_recyclerview"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="24dp"
+                    android:layout_marginTop="16dp"
+                    android:layout_marginEnd="24dp"
+                    android:layout_marginBottom="20dp"
+                    android:visibility="invisible"
+                    app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent" />
+                    app:layout_constraintTop_toBottomOf="@+id/horizontalScrollView2" />
 
-
-                <de.hdodenhof.circleimageview.CircleImageView
-                    android:id="@+id/home_logo"
-                    android:layout_width="60dp"
-                    android:layout_height="60dp"
-                    android:layout_marginTop="20dp"
-                    app:layout_constraintEnd_toEndOf="@+id/home_team_txt"
-                    app:layout_constraintStart_toStartOf="@+id/home_team_txt"
-                    app:layout_constraintTop_toBottomOf="@+id/macth_day"
-                    tools:srcCompat="@tools:sample/avatars" />
-
-                <de.hdodenhof.circleimageview.CircleImageView
-                    android:id="@+id/away_logo"
-                    android:layout_width="60dp"
-                    android:layout_height="60dp"
-                    android:layout_marginTop="4dp"
-                    app:layout_constraintBottom_toBottomOf="@+id/home_logo"
-                    app:layout_constraintEnd_toEndOf="@+id/away_team_txt"
-                    app:layout_constraintStart_toStartOf="@+id/away_team_txt"
-                    app:layout_constraintTop_toTopOf="@+id/home_logo"
-                    tools:srcCompat="@tools:sample/avatars" />
-
-                <TextView
-                    android:id="@+id/score"
-                    android:layout_width="wrap_content"
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/refree_recyclerview"
+                    android:layout_width="0dp"
                     android:layout_height="wrap_content"
-                    android:layout_marginStart="16dp"
-                    android:layout_marginEnd="16dp"
-                    android:fontFamily="@font/intter_bold"
-                    android:text="0 : 3"
-                    android:textColor="@color/colorOrangeLight"
-                    android:textSize="32dp"
-                    app:layout_constraintBottom_toBottomOf="@+id/home_logo"
-                    app:layout_constraintEnd_toStartOf="@+id/away_logo"
-                    app:layout_constraintHorizontal_bias="0.5"
-                    app:layout_constraintStart_toEndOf="@+id/home_logo"
-                    app:layout_constraintTop_toTopOf="@+id/home_logo"
-                    app:layout_constraintVertical_bias="0.421" />
-
-                <TextView
-                    android:id="@+id/home_team_txt"
-                    android:layout_width="106dp"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="16dp"
-                    android:layout_marginTop="8dp"
-                    android:layout_marginBottom="8dp"
-                    android:fontFamily="@font/inter_medium"
-                    android:text="HomeTeam"
-                    android:textAlignment="center"
-                    android:textColor="@color/PrimaryText"
-                    android:textSize="13sp"
-                    app:layout_constraintBottom_toTopOf="@+id/status5"
-                    app:layout_constraintEnd_toStartOf="@+id/away_team_txt"
-                    app:layout_constraintHorizontal_bias="0.5"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/home_logo"
-                    app:layout_constraintVertical_bias="1.0" />
-
-                <TextView
-                    android:id="@+id/away_team_txt"
-                    android:layout_width="106dp"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="8dp"
-                    android:layout_marginEnd="16dp"
-                    android:layout_marginBottom="8dp"
-                    android:fontFamily="@font/inter_medium"
-                    android:text="AwayTeam"
-                    android:textAlignment="center"
-                    android:textColor="@color/PrimaryText"
-                    app:layout_constraintBottom_toTopOf="@+id/status6"
+                    android:layout_marginStart="24dp"
+                    android:layout_marginTop="16dp"
+                    android:layout_marginEnd="24dp"
+                    android:layout_marginBottom="20dp"
+                    app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                    tools:listitem="@layout/referee_list"
                     app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintHorizontal_bias="0.5"
-                    app:layout_constraintStart_toEndOf="@+id/home_team_txt"
-                    app:layout_constraintTop_toBottomOf="@+id/away_logo" />
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/horizontalScrollView2" />
 
-                <TextView
-                    android:id="@+id/status5"
-                    android:layout_width="wrap_content"
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/substition_recyclerview"
+                    android:layout_width="0dp"
                     android:layout_height="wrap_content"
-                    android:layout_marginBottom="16dp"
-                    android:text="Home"
-                    android:textColor="@color/colorOrangeLight"
-                    android:textSize="12sp"
-                    app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintEnd_toEndOf="@+id/home_team_txt"
-                    app:layout_constraintStart_toStartOf="@+id/home_team_txt" />
+                    android:layout_marginStart="24dp"
+                    android:layout_marginTop="16dp"
+                    android:layout_marginEnd="24dp"
+                    android:layout_marginBottom="20dp"
+                    app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                    android:visibility="gone"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/horizontalScrollView2" />
 
-                <TextView
-                    android:id="@+id/status6"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginBottom="16dp"
-                    android:text="Away"
-                    android:textColor="@color/colorOrangeLight"
-                    android:textSize="12sp"
-                    app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintEnd_toEndOf="@+id/away_team_txt"
-                    app:layout_constraintStart_toStartOf="@+id/away_team_txt" />
-
-                <TextView
-                    android:id="@+id/status"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="status"
-                    android:textSize="12sp"
-                    app:layout_constraintBottom_toBottomOf="@+id/status5"
-                    app:layout_constraintEnd_toStartOf="@+id/status6"
-                    app:layout_constraintStart_toEndOf="@+id/status5"
-                    app:layout_constraintTop_toTopOf="@+id/status5" />
 
             </androidx.constraintlayout.widget.ConstraintLayout>
 
 
-        </androidx.cardview.widget.CardView>
+        </LinearLayout>
+    </ScrollView>
 
 
-    </FrameLayout>
-
-    <HorizontalScrollView
-        android:id="@+id/horizontalScrollView2"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="24dp"
-        android:layout_marginTop="16dp"
-        android:layout_marginEnd="24dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/stage_txt">
-
-        <com.google.android.material.chip.ChipGroup
-            android:id="@+id/chipGroup"
-            android:layout_width="wrap_content"
-            android:layout_height="56dp"
-            app:checkedChip="@+id/chip_goals"
-            app:chipSpacing="16dp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/frameLayout"
-            app:singleLine="true"
-            app:singleSelection="true">
-
-            <com.google.android.material.chip.Chip
-                android:id="@+id/chip_goals"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:fontFamily="@font/inter_medium"
-                android:tag="chipGoals"
-                android:text="@string/goals_txt"
-                android:textColor="@color/colorWhite"
-                android:textSize="14sp"
-                app:chipBackgroundColor="@color/Primary" />
-
-
-            <com.google.android.material.chip.Chip
-                android:id="@+id/chip_subtitution"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:fontFamily="@font/inter_medium"
-                android:tag="chip_subtitution"
-                android:text="@string/substitutions_txt"
-                android:textColor="@color/Primary" />
-
-            <com.google.android.material.chip.Chip
-                android:id="@+id/chip_refree"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:fontFamily="@font/inter_medium"
-                android:tag="chip_refree"
-                android:text="@string/referee_txt"
-                android:textColor="@color/Primary" />
-
-            <com.google.android.material.chip.Chip
-                android:id="@+id/chip_lineup"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:fontFamily="@font/inter_medium"
-                android:tag="chip_lineup"
-                android:text="@string/line_up_txt"
-                android:textColor="@color/Primary" />
-
-
-
-
-            <com.google.android.material.chip.Chip
-                android:id="@+id/chip_booking"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:fontFamily="@font/inter_medium"
-                android:tag="chip_booking"
-                android:text="Booking"
-                android:textColor="@color/Primary" />
-
-        </com.google.android.material.chip.ChipGroup>
-    </HorizontalScrollView>
-
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/goals_recyclerview"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="24dp"
-        android:layout_marginTop="16dp"
-        android:layout_marginEnd="24dp"
-        android:layout_marginBottom="96dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/horizontalScrollView2" />
-
-
-
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/lineup_recyclerview"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="24dp"
-        android:layout_marginTop="16dp"
-        android:layout_marginEnd="24dp"
-        android:layout_marginBottom="96dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/horizontalScrollView2" />
-
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/substition_recyclerview"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="24dp"
-        android:layout_marginTop="16dp"
-        android:layout_marginEnd="24dp"
-        android:layout_marginBottom="96dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/horizontalScrollView2" />
-
-    <TextView
-        android:id="@+id/date_txt"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:layout_marginEnd="24dp"
-        android:text="TextView"
-        android:textAlignment="textEnd"
-        app:layout_constraintBottom_toBottomOf="@+id/textView"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/textView"
-        app:layout_constraintTop_toTopOf="@+id/textView" />
-
-    <TextView
-        android:id="@+id/textView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
-        android:text="Date:"
-        app:layout_constraintStart_toStartOf="@+id/guideline14"
-        app:layout_constraintTop_toBottomOf="@+id/frameLayout" />
-
-
-
-    <TextView
-        android:id="@+id/textView11"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
-        android:text="Stage:"
-        app:layout_constraintStart_toStartOf="@+id/guideline14"
-        app:layout_constraintTop_toBottomOf="@+id/textView" />
-
-    <TextView
-        android:id="@+id/stage_txt"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:layout_marginEnd="24dp"
-        android:textAlignment="textEnd"
-        android:text="TextView dgdggdgdgdgdgdgdgdgdggdgdgddgdgdggdgdgdgdg"
-        app:layout_constraintBottom_toBottomOf="@+id/textView11"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/textView11"
-        app:layout_constraintTop_toTopOf="@+id/textView11" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

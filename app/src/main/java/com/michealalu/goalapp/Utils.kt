@@ -28,9 +28,16 @@ fun <A : Activity> Activity.startNewActivity(activity: Class<A>) {
     startActivity(Intent(this, activity))
 }
 
+fun <A : Activity> Activity.StartNewActivityWithFlag(activity: Class<A>) {
+    Intent(this, activity).also {
+        it.flags = Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK
+        startActivity(it)
+    }
+}
+
 fun <A : Activity> Activity.startNewActivityByID(activity: Class<A>, content: String) {
     Intent(this, activity).also {
-        it.putExtra("MATCH_CONTENT", content)
+        it.putExtra("CONTENT", content)
         startActivity(it)
     }
 }

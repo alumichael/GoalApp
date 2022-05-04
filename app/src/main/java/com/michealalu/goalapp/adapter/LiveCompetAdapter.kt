@@ -8,15 +8,12 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
-import com.bumptech.glide.Glide
-import com.bumptech.glide.load.engine.DiskCacheStrategy
-import com.bumptech.glide.request.RequestOptions
 import com.github.twocoffeesoneteam.glidetovectoryou.GlideToVectorYou
 import com.michealalu.goalapp.Constant.Companion.BASE_URL
 import com.michealalu.goalapp.Constant.Companion.LOGOBASE_URL
 import com.michealalu.goalapp.databinding.LiveListBinding
-import com.michealalu.goalapp.model.match.Competition
 import com.michealalu.goalapp.model.match.Matche
+import com.squareup.picasso.Picasso
 
 class LiveCompetAdapter(val context: Context,val competitionName: String)
     : ListAdapter<Matche, LiveCompetAdapter.MatcheViewHolder>(LiveCompetAdapter.ItemGroupDiffUtill()){
@@ -99,13 +96,26 @@ class LiveCompetAdapter(val context: Context,val competitionName: String)
                         .with(context)
                         .load(Uri.parse(url_away),awayLogo)
                 }else{
-                    Glide.with(context).load(url_home).apply(
+
+                    Picasso.get()
+                        .load(url_home)
+                        .resize(40,40)
+                        .centerCrop()
+                        .into(homeLogo)
+
+                    Picasso.get()
+                        .load(url_away)
+                        .resize(40,40)
+                        .centerCrop()
+                        .into(awayLogo)
+
+                   /* Glide.with(context).load(url_home).apply(
                         RequestOptions().diskCacheStrategy(DiskCacheStrategy.AUTOMATIC).fitCenter()
                     ).into(homeLogo)
 
                     Glide.with(context).load(url_away).apply(
                         RequestOptions().diskCacheStrategy(DiskCacheStrategy.AUTOMATIC).fitCenter()
-                    ).into(awayLogo)
+                    ).into(awayLogo)*/
                 }
             }
 

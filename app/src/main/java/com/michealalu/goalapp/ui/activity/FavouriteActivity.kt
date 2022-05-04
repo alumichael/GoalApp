@@ -88,6 +88,6 @@ class FavouriteActivity : AppCompatActivity(), FavFavTeamAdapter.FavouriteListen
 
     override fun onUnSelectFavTeam(team: FavTeam,pos:Int) {
         viewModel.deleteSingleTeamRecord(team.id)
-        getTeamDetails()
+
     }
 }

@@ -2,29 +2,19 @@ package com.michealalu.goalapp.adapter
 
 import android.annotation.SuppressLint
 import android.content.Context
-import android.content.res.ColorStateList
 import android.graphics.Color
-import android.graphics.drawable.Drawable
 import android.net.Uri
 import android.util.Log
 import android.view.LayoutInflater
-import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
-import com.bumptech.glide.Glide
-import com.bumptech.glide.load.DataSource
-import com.bumptech.glide.load.engine.DiskCacheStrategy
-import com.bumptech.glide.load.engine.GlideException
-import com.bumptech.glide.request.RequestListener
-import com.bumptech.glide.request.RequestOptions
-import com.bumptech.glide.request.target.Target
 import com.github.twocoffeesoneteam.glidetovectoryou.GlideToVectorYou
-import com.michealalu.goalapp.Constant
 import com.michealalu.goalapp.R
 import com.michealalu.goalapp.databinding.CompetitionListBinding
 import com.michealalu.goalapp.model.competitions.Competition
+import com.squareup.picasso.Picasso
 
 class CompetitionAdapter(val context: Context)
     : ListAdapter<Competition, CompetitionAdapter.CompetitionViewHolder>(ItemGroupDiffUtill()){
@@ -90,7 +80,7 @@ class CompetitionAdapter(val context: Context)
             }
         }
 
-        fun loadLogo(url: String) {
+       fun loadLogo(url: String) {
             with(binding) {
                 if(url.endsWith("svg")) {
                     GlideToVectorYou
@@ -98,9 +88,11 @@ class CompetitionAdapter(val context: Context)
                         .with(context)
                         .load(Uri.parse(url), chipIcon)
                 }else{
-                    Glide.with(context).load(url).apply(
-                        RequestOptions().diskCacheStrategy(DiskCacheStrategy.AUTOMATIC).fitCenter()
-                    ).into(chipIcon)
+                    Picasso.get()
+                        .load(url)
+                        .resize(60,60)
+                        .centerCrop()
+                        .into(chipIcon)
                 }
 
 

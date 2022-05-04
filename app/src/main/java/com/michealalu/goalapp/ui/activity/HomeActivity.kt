@@ -181,14 +181,14 @@ class HomeActivity : AppCompatActivity(), SwipeRefreshLayout.OnRefreshListener,
 
                                         matchAdapter = MatchAdapter(this@HomeActivity, selectedCompetitnName)
                                         macthRecyclerview.adapter = matchAdapter
-                                        matchAdapter.submitList(it.value.matches!!.sortedByDescending { it.status.equals("SCHEDULED") })
+                                        matchAdapter.submitList(it.value.matches!!
+                                            .sortedByDescending { it.status.equals("SCHEDULED") })
 
                                         //on clicking a match
                                         matchAdapter.onItemClick={
-                                            
-                                            Log.i("matchID", it.id.toString())
 
                                                 val contentJson = gson.toJson(it)
+                                            Log.i("contentJson", contentJson)
                                                 startNewActivityByID(MatchDetailActivity::class.java,
                                                     contentJson
                                                 )

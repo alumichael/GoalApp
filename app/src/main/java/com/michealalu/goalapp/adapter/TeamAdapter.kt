@@ -5,18 +5,13 @@ import android.net.Uri
 import android.util.Log
 import android.view.LayoutInflater
 import android.view.ViewGroup
-import androidx.core.content.ContextCompat
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
-import com.bumptech.glide.Glide
-import com.bumptech.glide.load.engine.DiskCacheStrategy
-import com.bumptech.glide.request.RequestOptions
 import com.github.twocoffeesoneteam.glidetovectoryou.GlideToVectorYou
-import com.michealalu.goalapp.R
-import com.michealalu.goalapp.databinding.StandingListBinding
 import com.michealalu.goalapp.databinding.TeamsListBinding
 import com.michealalu.goalapp.model.team.Team
+import com.squareup.picasso.Picasso
 
 
 class TeamAdapter(val context: Context, private val favTeamListener:FavouriteTeamListener)
@@ -91,9 +86,15 @@ class TeamAdapter(val context: Context, private val favTeamListener:FavouriteTea
                         .with(context)
                         .load(Uri.parse(url), teamLogo)
                 }else{
-                    Glide.with(context).load(url).apply(
+
+                    Picasso.get()
+                        .load(url)
+                        .resize(55,55)
+                        .centerCrop()
+                        .into(teamLogo)
+                   /* Glide.with(context).load(url).apply(
                         RequestOptions().diskCacheStrategy(DiskCacheStrategy.AUTOMATIC).fitCenter()
-                    ).into(teamLogo)
+                    ).into(teamLogo)*/
                 }
 
 
